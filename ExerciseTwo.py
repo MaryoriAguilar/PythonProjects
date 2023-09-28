@@ -15,4 +15,14 @@ for i, char in enumerate(story):
         word = story[start_of_word: i + 1]
         words.append(word)
         start_of_word = -1
-        print(word)
+        
+answers = {}
+
+for word in words:
+    answer = input("Enter a word for " + word + ": ")
+    answers[word] = answer
+    
+for word in words:
+    story = story.replace(word, answers[word])
+    
+print(story)
